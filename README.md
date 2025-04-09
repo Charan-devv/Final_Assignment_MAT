@@ -58,4 +58,7 @@ To run a specific test, you can use
 ```bash
 npm run test [my test name]
 ```
-
+```bash
+to build the project
+npm run build
+```
