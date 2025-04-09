@@ -9,4 +9,8 @@ describe('calculateCanvasSize', () => {
     expect(calculateCanvasSize('0', '10')).toBe(0);
     expect(calculateCanvasSize('10', '0')).toBe(0);
   });
+  test('should return NaN for non-numeric input', () => {
+    expect(calculateCanvasSize('a', '5')).toBeNaN();
+    expect(calculateCanvasSize('10', 'b')).toBeNaN();
+  });
 });
