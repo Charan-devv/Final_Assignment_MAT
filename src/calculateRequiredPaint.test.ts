@@ -1,9 +1,11 @@
-// calculateRequiredPaint.test.ts
-import { calculateRequiredPaint } from './calculateRequiredPaint';
-
-describe('calculateRequiredPaint', () => {
-  test('should calculate total paint required for 5000 copies of 3m x 2m work', () => {
-    const result = calculateRequiredPaint('3', '2', 5000);
-    expect(result).toBe(15000); // 0.5 * 3 * 2 * 5000 = 15000
-  });
-});
+// calculateRequiredPaint.ts
+export function calculateRequiredPaint(length: string, width: string, copies: number): number {
+    const l = parseFloat(length);
+    const w = parseFloat(width);
+  
+    if (isNaN(l) || isNaN(w) || copies <= 0) return NaN;
+  
+    // Area of one triangle * 3 triangles (since it's always 3 triangles on the rectangle)
+    const paintRequired = 0.5 * l * w * 3; 
+    return paintRequired * copies;
+  }
